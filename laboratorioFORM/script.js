@@ -6,13 +6,12 @@ const email = document.getElementById('email');
 const login = document.getElementById('login');
 const password = document.getElementById('password');
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    ValideInputs();
+form.addEventListener('submit', (event) => {
+    
+    ValideInputs(event);
 });
 
-function ValideInputs(){
-    /*resetFormState();*/
+function ValideInputs(event){
 
     const nombreValue = nombre.value.trim();
     const apellido1Value = apellido1.value.trim();
@@ -75,26 +74,25 @@ function ValideInputs(){
         setSuccessFor(password);
     }
      
-    if ( nombreValue !== '' && 
-    apellido1Value !== '' && 
-    apellido2Value !== '' &&
-    emailValue !== '' && 
-    loginValue !== '' && 
-    passwordValue !== '' && 
-    isText(nombreValue) === true &&
-    isText(apellido1Value) === true && 
-    isText(apellido2Value) === true && 
-    isEmail(emailValue) === true &&
-    aceptaCaracteres(loginValue) === true && 
-    passwordValue.length >= 4 &&
-    passwordValue.length <= 8) 
-    {
-    setTimeout(() => { 
-    alert('La inscripción ha sido correcta');
-    resetForm();
-    }, 500);
-}
+    if ( nombreValue == '' || 
+            apellido1Value == '' || 
+            apellido2Value == '' ||
+            emailValue == '' || 
+            loginValue == '' || 
+            passwordValue == '' || 
+            isText(nombreValue) === false ||
+            isText(apellido1Value) === false || 
+            isText(apellido2Value) === false || 
+            isEmail(emailValue) === false ||
+            aceptaCaracteres(loginValue) === false || 
+            passwordValue.length < 4 ||
+            passwordValue.length > 8) {   
+     
+        event.preventDefault();
+    
+    }
 
+}
 
     function setErrorFor(input, message){
     const formControl = input.parentElement;
@@ -131,4 +129,3 @@ function ValideInputs(){
         const ValidLogin = /(.*)/;
         return ValidLogin.test(login);
     }         
-}

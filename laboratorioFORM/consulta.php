@@ -21,7 +21,7 @@ if ($result->num_rows > 0) {
         echo "<tr><td>" . $row["id"]. "</td><td>" . $row["nombre"]. "</td><td>" . $row["apellido1"]. "</td><td>" . $row["apellido2"]. "</td><td>" . $row["email"]. "</td><td>" . $row["login"]. "</td></tr>";
     }
     echo "</table>";
-    echo '<br><a href="index.html">Volver al formulario</a>';
+    echo '<br><a href="index.php">Volver al formulario</a>';
 } else {
     echo "0 resultados";
 }

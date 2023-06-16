@@ -39,7 +39,7 @@ body {
 .icon-error, .icon-success {
     visibility: hidden;
     position: absolute;
-    top: 35px;
+    top: 30px;
     right: 10px; 
 }
 
@@ -84,6 +84,15 @@ input {
     margin-bottom: 20px;
     width: 100%;
     cursor: pointer;
+}
+
+.mensaje {
+    color: rgb(219, 90, 90);;
+}
+
+.mensajeok {
+    color: rgb(78, 202, 100);
+    
 }
 
 /* ----- -----  Estilos para Validacion ----- ----- */
