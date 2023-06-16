@@ -64,12 +64,13 @@
                 <small></small>
             </div>
 
-            <button type="submit">ENVIAR</button>
+            <button name="submit" type="submit">ENVIAR</button>
+            
         </form>
-        <br>
-        <a href="consulta.php">Consulta</a>
     </div>
-    <script src="index.js"></script>
+    <br>
+    <a href="consulta.php">Consulta</a>
+    <script src="script.js"></script>
 </body>
 </html>
 
@@ -125,7 +126,7 @@ if ($validacion !== "") {
         echo '<a href="index.html">Volver al registro</a>';
    
     } else {
-        $sql = "INSERT INTO usuarios (nombre, apellido1, apellido2, email, login, password)
+        $sql = "INSERT INTO usuarios (nombre, apellido1, apellido2, email, login, contraseña)
                 VALUES ('$nombre', '$apellido1', '$apellido2', '$email', '$login', '$password')";
 
         if ($conn->query($sql) === TRUE) {
